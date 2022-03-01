@@ -1,108 +1,96 @@
-
-
-
-
 :root {
-
-    --nav : #000;
-    --btn : #00AA47;
-    --color : #fff;
-    --border : #E0E0E0;
-
-     
+  --nav: #000;
+  --btn: #00aa47;
+  --color: #fff;
+  --border: #e0e0e0;
 }
 
 .landing__navbar {
-
-    position: relative;
-       padding: 0.2rem 5rem 0.2rem 5rem;
-       border-bottom: 1px solid var(--border);
-      
+  position: relative;
+  padding: 0.2rem 5rem 0.2rem 5rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .landing__navbar ul {
-
-    display : flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-    
-    
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
 }
 
 .landing__navbar ul li {
-       list-style: none;
-
+  list-style: none;
 }
 
-
 .landing__navbar__image {
-
-    background-image: url('../../../public/images/notes.svg');
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-
-
+  background-image: url("../../../public/images/notes.svg");
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .logo {
-      position: absolute;
-      left: 20%;
+  position: absolute;
+  left: 20%;
 }
 
 .auth {
-      position: absolute;
-      right: 25%;
+  position: absolute;
+  right: 25%;
 }
 
 /* btn */
 
 .landing__navbar__btn {
-       outline: none;
-       border: none;
-       background-color: var(--btn);
-       color: var(--color);
-       border-radius: 4px;
-       cursor: pointer;
-       padding: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: var(--btn);
+  color: var(--color);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 .heading {
-       color: var(--btn);
+  color: var(--btn);
 }
 
-.login  {
-    font-size: 1rem;
-    font-weight: 400;
-    cursor: pointer;
+.login {
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
 }
-
-
-
 
 /* Main container */
 
 .landingpage__container {
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
+  .landingpage__container h2 {
+    font-size: 0.8rem;
+  }
 
-       .landingpage__container h2{
-              
-              font-size: 0.8rem;
-       }
+  .landing__navbar {
+    padding: 0.2rem 1rem 0.2rem 1rem;
     
-}
+  }
 
+  .landing__navbar__btn {
+   
+    padding: 0.3rem;
+  }
+
+  .heading {
+        font-size: 1rem;
+  }
+
+
+}
