@@ -11,11 +11,17 @@
 
 .landing__navbar {
 
-       display : flex;
-       align-items: center;
-       justify-content: space-between;
+  
        padding: 0.6rem;
       
+}
+
+.landing__navbar ul {
+
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 
