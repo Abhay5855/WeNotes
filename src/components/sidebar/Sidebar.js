@@ -5,25 +5,25 @@ const Sidebar = () => {
   return (
     <div className="sidebar__container">
       <div className="sidebar__elements">
-        <div>
+        <div className="sidebar__items">
           <i class="far fa-sticky-note"></i>
 
-          <h3>Notes</h3>
+          <div>Notes</div>
         </div>
 
-        <div>
+        {/* <div className="sidebar__items">
           <i class="far fa-star"></i>
-          <h3>Favorites</h3>
-        </div>
+          <div>Favorites</div>
+        </div> */}
 
-        <div>
+        <div className="sidebar__items">
           <i class="fas fa-hashtag"></i>
-          <h3>Tags</h3>
+          <div>Tags</div>
         </div>
 
-        <div>
-        <i class="fas fa-th-list"></i>
-         <h3>Todos</h3>
+        <div className="sidebar__items">
+          <i class="fas fa-th-list"></i>
+          <div>Todos</div>
         </div>
       </div>
     </div>

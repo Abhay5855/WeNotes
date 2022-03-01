@@ -1,21 +1,45 @@
-
-
 :root {
-      --sidebar : #2B2B2B;
+  --sidebar: #2b2b2b;
+  --sidebar_color : #D3D3D3;
+  --main-color : #fff;
+   --recent : #008837;
+   --editor : #202124;
+   --tags-section : #D3D3D3;
+   --notes : #353535;
+
 }
 
-
-
-
 .sidebar__container {
-    
-      display: flex;
-
-       
+  display: flex;
 }
 
 .sidebar__elements {
-      flex: 0.1;
-      height: 100vh;
-       background-color: var(--sidebar);
+  padding: 0.4rem;
+  flex: 0.1;
+  height: 100vh;
+  background-color: var(--sidebar);
+  border-bottom: 0.5px solid var(--tags-section);
+}
+
+.sidebar__items {
+     
+    color : var(--sidebar_color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    
+
+    
+}
+
+
+.sidebar__items > div {
+
+      font-size: 0.8rem;
+      margin-left: 1rem;
+      
+}
+
+.sidebar__items > i {
+      font-size: 0.8rem;
 }
