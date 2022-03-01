@@ -11,6 +11,12 @@ const LandingPage = () => {
 
         <LandingNavbar />
 
+        <main className='landingpage__container'>
+
+             <h2><span className='heading'>WeNotes</span>, Your private note taking space.</h2>
+
+        </main>
+
     </div>
   )
 }
