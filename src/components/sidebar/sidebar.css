@@ -15,7 +15,7 @@
 }
 
 .sidebar__elements {
-      flex: 0.3;
+      flex: 0.1;
       height: 100vh;
-      border: 1px solid red;
+       background-color: var(--sidebar);
 }
