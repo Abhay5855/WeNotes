@@ -14,7 +14,7 @@
 
 .landing__navbar {
 
-  
+    position: relative;
        padding: 0.2rem 5rem 0.2rem 5rem;
        border-bottom: 1px solid var(--border);
       
@@ -24,8 +24,10 @@
 
     display : flex;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1;
+    
+    
 
 }
 
@@ -47,6 +49,16 @@
 
 
 
+}
+
+.logo {
+      position: absolute;
+      left: 20%;
+}
+
+.auth {
+      position: absolute;
+      right: 25%;
 }
 
 /* btn */
@@ -72,6 +84,8 @@
 }
 
 
+
+
 /* Main container */
 
 .landingpage__container {
@@ -81,5 +95,14 @@
       align-items: center;
       justify-content: center;
 
+}
+
+@media screen and (max-width: 550px){
+
+       .landingpage__container h2{
+              
+              font-size: 0.8rem;
+       }
+    
 }
 

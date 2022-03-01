@@ -8,12 +8,13 @@ const LandingNavbar = () => {
         <li>
           <div className="landing__navbar__image"></div>
         </li>
+       
+       <li className="logo">
+           <h2 className="heading">WeNotes</h2>
+       </li>
+        
 
-        <li>
-          <h3><span className="heading">WeNotes</span>, Write better, faster, smarter</h3>
-        </li>
-
-        <li>
+        <li className="auth">
           <p className="login">Login</p>
         </li>
 
