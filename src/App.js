@@ -12,7 +12,7 @@ function App() {
         <Route path='/' element={<LandingPage />}></Route>
       </Routes>
       </BrowserRouter>
-
+      
       
    
     </div>
