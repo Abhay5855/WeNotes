@@ -1,0 +1,21 @@
+
+
+:root {
+      --sidebar : #2B2B2B;
+}
+
+
+
+
+.sidebar__container {
+    
+      display: flex;
+
+       
+}
+
+.sidebar__elements {
+      flex: 0.3;
+      height: 100vh;
+      border: 1px solid red;
+}
