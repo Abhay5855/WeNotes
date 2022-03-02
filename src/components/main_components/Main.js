@@ -9,9 +9,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LandingNavbar from "../landing/LandingNavbar";
 import LandingPage from "../landing/LandingPage";
 
+import './main.css'
+
+
 const Main = () => {
   return (
-    <div>
+    <div className="main__container">
       <Router>
         <Sidebar />
         <Switch>
