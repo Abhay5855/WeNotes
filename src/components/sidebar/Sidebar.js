@@ -27,6 +27,9 @@ const Sidebar = () => {
             <div>Tasks</div>
           </div>
         </Link>
+
+
+      
       </div>
     </div>
   );
