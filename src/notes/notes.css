@@ -37,9 +37,9 @@
     
 }
 
-.fas , .fa-search {
+.search > i{
 
-      color: var(--main-color);
+      color: var(--editor);
       font-size: 0.7rem;
 
 }
@@ -49,6 +49,7 @@
         /* background-color: var(--recent); */
         color: var(--recent);
         font-size: 0.9rem;
+     
 }
 
 .notes__heading {
@@ -57,9 +58,22 @@
 }
 
 .search {
-       margin-left : 7rem;
-       cursor: pointer;
+        
+       border-radius: 9999px;
+       background-color: var(--sidebar_color);
+       color: var(--tags-section);
+       display: flex;
+       align-items: center;
+       padding: 0.2rem;
+       margin-left: 1rem;
 
+}
+
+.search input {
+       outline: none;
+       border: none;
+       background-color: var(--sidebar_color);
+     
 }
 
 .add {

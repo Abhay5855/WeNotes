@@ -13,16 +13,17 @@ const Notes = () => {
           </li>
 
           <li>
-            <span className="search">
+            <div className="search">
+              <input type='text' placeholder="Search notes"/>
               <i class="fas fa-search"></i>
-            </span>
+            </div>
           </li>
 
-          <li>
+          {/* <li>
             <span className="add">
               <i class="fas fa-plus-circle"></i>
             </span>
-          </li>
+          </li> */}
         </ul>
       </div>
     // </div>
