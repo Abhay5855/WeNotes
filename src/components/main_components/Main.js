@@ -15,6 +15,9 @@ import './main.css'
 const Main = () => {
   return (
     <div className="main__container">
+
+      <div className="main__items">
+
       <Router>
         <Sidebar />
         <Switch>
@@ -29,6 +32,9 @@ const Main = () => {
           </Route>
         </Switch>
       </Router>
+
+      </div>
+  
     </div>
   );
 };

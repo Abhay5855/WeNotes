@@ -6,6 +6,7 @@
   --editor: #202124;
   --tags-section: #d3d3d3;
   --notes: #353535;
+  --hover :  #767676;
 }
 
 .sidebar__container {
@@ -16,7 +17,7 @@
   padding: 0.4rem;
   flex: 0.1;
   height: 100vh;
-  background-color: var(--sidebar);
+  background-color: var(--notes);
 }
 
 .sidebar__items {
@@ -29,7 +30,7 @@
 }
 
 .sidebar__items:hover {
-  background-color: var(--notes);
+  background-color: var(--hover);
   border-radius: 0.5rem;
 }
 

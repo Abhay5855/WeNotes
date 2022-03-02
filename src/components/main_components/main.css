@@ -1,9 +1,27 @@
 
-
+:root {
+    --sidebar: #2b2b2b;
+    --sidebar_color: #d3d3d3;
+    --main-color: #fff;
+    --recent: #008837;
+    --editor: #202124;
+    --tags-section: #d3d3d3;
+    --notes: #353535;
+  }
+  
 
 .main__container {
 
       display: flex;
       flex-direction: row;
-      
+
+
+}
+
+.main__items {
+
+    flex: 0.5;
+    background-color: var(--sidebar);
+    height : 100vh;
+
 }
