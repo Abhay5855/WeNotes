@@ -1,12 +1,11 @@
 :root {
   --sidebar: #2b2b2b;
-  --sidebar_color : #D3D3D3;
-  --main-color : #fff;
-   --recent : #008837;
-   --editor : #202124;
-   --tags-section : #D3D3D3;
-   --notes : #353535;
-
+  --sidebar_color: #d3d3d3;
+  --main-color: #fff;
+  --recent: #008837;
+  --editor: #202124;
+  --tags-section: #d3d3d3;
+  --notes: #353535;
 }
 
 .sidebar__container {
@@ -18,38 +17,29 @@
   flex: 0.1;
   height: 100vh;
   background-color: var(--sidebar);
-
 }
 
 .sidebar__items {
-     
-    color : var(--sidebar_color);
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    padding: 0.3rem;
-
-    
-
-    
+  color: var(--sidebar_color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  padding: 0.3rem;
 }
 
 .sidebar__items:hover {
-
-    background-color: var(--notes);
-    border-radius: 0.5rem;
-      
+  background-color: var(--notes);
+  border-radius: 0.5rem;
 }
+
 
 
 .sidebar__items > div {
-
-      font-size: 0.8rem;
-      margin-left: 1rem;
-      
+  font-size: 0.8rem;
+  margin-left: 1rem;
 }
 
 .sidebar__items > i {
-      font-size: 0.8rem;
+  font-size: 0.8rem;
 }
