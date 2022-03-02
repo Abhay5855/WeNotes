@@ -12,20 +12,30 @@
     --hover :  #767676;
   }
 
-
-.notes__container {
-      display: flex;
-      flex-direction: row;
-}
+/* 
+.notes__header {
+         position: relative;
+} */
 
 .notes__header ul{
 
-       
+    padding: 0.5rem; 
     display:flex;
     align-items: center;
     
+    
+
+  
+    
 }
 
+
+.notes__header ul li {
+        list-style: none;
+        justify-content: space-between;
+        /* margin-right: 2rem; */
+    
+}
 
 .fas , .fa-search {
 
@@ -34,14 +44,26 @@
 
 }
 
-.fas , .fa-plus-circle {
+.fa-plus-circle {
 
-        background-color: var(--recent);
-        color: var(--main-color);
-        font-size: 0.7rem;
+        /* background-color: var(--recent); */
+        color: var(--recent);
+        font-size: 0.9rem;
 }
 
 .notes__heading {
       color: var(--main-color);
       font-size: 1rem;
 }
+
+.search {
+       margin-left : 7rem;
+       cursor: pointer;
+
+}
+
+.add {
+       margin-left: 3rem;
+       cursor: pointer;
+}
+

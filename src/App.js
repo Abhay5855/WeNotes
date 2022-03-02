@@ -18,7 +18,7 @@ function App() {
             <LandingPage />
           </Route>
 
-          <Route exact path='/main'>
+          <Route exact path='/notes'>
             <Main />
           </Route>
         

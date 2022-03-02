@@ -1,30 +1,31 @@
 import React from "react";
-import './notes.css'
+import "./notes.css";
 
 const Notes = () => {
   return (
-    <div className="notes__container">
-      <header className="notes__header">
+    // <div className="notes__container">
+      <div className="notes__header">
         <ul>
           <li>
-            <h3 style={{color : '#fff'}} className="notes__heading">Notes</h3>
+            <h3  className="notes__heading">
+              Notes
+            </h3>
           </li>
 
           <li>
-            <div>
+            <span className="search">
               <i class="fas fa-search"></i>
-            </div>
+            </span>
           </li>
 
           <li>
-            <div>
-            <i class="fas fa-plus-circle"></i>
-            </div>
+            <span className="add">
+              <i class="fas fa-plus-circle"></i>
+            </span>
           </li>
         </ul>
-      </header>
-    </div>
-  
+      </div>
+    // </div>
   );
 };
 
