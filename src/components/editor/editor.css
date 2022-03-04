@@ -1,0 +1,16 @@
+
+
+
+.editor__container {
+      
+       display: flex;
+       flex-direction: column;
+       background-color: burlywood;
+       height: 100vh;
+}
+
+.editor {
+/* 
+       flex: 0.4; */
+
+}
