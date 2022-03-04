@@ -3,7 +3,7 @@ import "./notes.css";
 
 const Notes = () => {
   return (
-    // <div className="notes__container">
+  
       <div className="notes__header">
         <ul>
           <li>
@@ -19,14 +19,14 @@ const Notes = () => {
             </div>
           </li>
 
-          {/* <li>
+          <li>
             <span className="add">
               <i class="fas fa-plus-circle"></i>
             </span>
-          </li> */}
+          </li>
         </ul>
       </div>
-    // </div>
+  
   );
 };
 
