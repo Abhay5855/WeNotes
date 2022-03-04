@@ -1,16 +1,73 @@
 
 
 
+:root {
+       --editor : #1F1F1F;
+       --color : #fff;
+}
+
 .editor__container {
-      
-       display: flex;
-       flex-direction: column;
-       background-color: burlywood;
+
        height: 100vh;
-}
-
-.editor {
-/* 
-       flex: 0.4; */
 
 }
+
+
+.ql-editor {
+       min-height: 230px;
+       background-color: var(--editor);
+       color: var(--color);
+     }
+     
+
+   /* Editor */
+   .ql-toolbar.ql-snow {
+       box-sizing: border-box;
+       padding: 3px;
+       
+   }
+
+
+   /* normal */
+
+.ql-snow .ql-picker-label {
+    cursor: pointer;
+    display: inline-block;
+    height: 70%;
+    padding-left: 2px;
+    padding-right: 2px;
+    position: relative;
+    width:70%;
+}
+
+/* pointer */
+
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+       position: absolute;
+       /* margin-top: -7px; */
+       right: 0;
+       top: 40%;
+       width: 10px;
+   }
+
+
+   .ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
+       background: none;
+       border: none;
+       cursor: pointer;
+       /* display: inline-block; */
+       height: 15px;
+       padding: 1px ;
+       width: 15px;
+   }
+
+   /* last */
+   .ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
+       background: none;
+       border: none;
+       cursor: pointer;
+       display: inline-block;
+       height: 15px;
+       padding: 1px;
+       width: 15px;
+   }
