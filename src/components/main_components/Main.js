@@ -39,7 +39,7 @@ const Main = () => {
           <Sidebar />
           <Switch>
             <Route path="/notes">
-              <Notes />
+              <Notes notes={notes} />
             </Route>
             <Route path="/tasks">
               <Tasks />
