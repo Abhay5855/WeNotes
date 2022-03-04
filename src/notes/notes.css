@@ -6,7 +6,8 @@
   --editor: #202124;
   --tags-section: #d3d3d3;
   --notes: #353535;
-  --hover: #767676;
+  --hover: #5B5B5B;
+  --date : #A1A1A1;
 }
 
 .notes__header ul {
@@ -58,4 +59,30 @@
 
 .editor__container {
   background-color: var(--editor);
+}
+
+.notes__container {
+     
+  /* background-color: var(--hover); */
+  width: 100%;
+  background-color: var(--hover);
+  padding: 0.2rem;
+  border-left: 2px solid var(--recent);
+  cursor: pointer;
+  
+     
+}
+
+
+.note__title {
+     color: var(--tags-section);
+
+}
+
+.notes {
+     padding: 0.5rem;
+}
+
+.note__date {
+      color: var(--date);
 }
