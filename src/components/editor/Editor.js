@@ -28,9 +28,11 @@ const Editor = () => {
   const handleAdd = () => {
 
          setAddingNote(true);
+         console.log('added');
   }
 
   // Disable condition if text is empty
+  const disabled =  !title;
 
   return (
     <div className="editor__container">
@@ -38,10 +40,10 @@ const Editor = () => {
         {/* Using dangerousHtml property to remove the html tags and display plain text */}
         {/* <h2 dangerouslySetInnerHTML={{ __html: text }} /> */}
 
-        <button  className="submit__note"  onClick={handleAdd}>
+        <button disabled={disabled} className="submit__note"  onClick={handleAdd}>
             Submit Note
         </button>
-        <input type='text' placeholder='Enter your note title..'/>
+        <input type='text' placeholder='Enter your note title..' value={title} onChange={(e) => setTitle(e.target.value)}/>
         
         <Editor_Format />
         <ReactQuill
