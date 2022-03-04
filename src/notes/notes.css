@@ -1,83 +1,61 @@
-
-
-
 :root {
-    --sidebar: #2b2b2b;
-    --sidebar_color: #d3d3d3;
-    --main-color: #fff;
-    --recent: #008837;
-    --editor: #202124;
-    --tags-section: #d3d3d3;
-    --notes: #353535;
-    --hover :  #767676;
-  }
-
-/* 
-.notes__header {
-         position: relative;
-} */
-
-.notes__header ul{
-
-    padding: 0.5rem; 
-    display:flex;
-    align-items: center;
-    
-    
-
-  
-    
+  --sidebar: #2b2b2b;
+  --sidebar_color: #d3d3d3;
+  --main-color: #fff;
+  --recent: #008837;
+  --editor: #202124;
+  --tags-section: #d3d3d3;
+  --notes: #353535;
+  --hover: #767676;
 }
 
+.notes__header ul {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
 
 .notes__header ul li {
-        list-style: none;
-        justify-content: space-between;
-        /* margin-right: 2rem; */
-    
+  list-style: none;
+  justify-content: space-between;
 }
 
-.search > i{
-
-      color: var(--editor);
-      font-size: 0.7rem;
-
+.search > i {
+  color: var(--editor);
+  font-size: 0.7rem;
 }
 
 .fa-plus-circle {
-
-        /* background-color: var(--recent); */
-        color: var(--recent);
-        font-size: 0.9rem;
-     
+  color: var(--recent);
+  font-size: 0.9rem;
 }
 
 .notes__heading {
-      color: var(--main-color);
-      font-size: 1rem;
+  color: var(--main-color);
+  font-size: 1rem;
 }
 
 .search {
-        
-       border-radius: 9999px;
-       background-color: var(--sidebar_color);
-       color: var(--tags-section);
-       display: flex;
-       align-items: center;
-       padding: 0.2rem;
-       margin-left: 1rem;
-
+  border-radius: 9999px;
+  background-color: var(--sidebar_color);
+  color: var(--tags-section);
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  margin-left: 1rem;
 }
 
 .search input {
-       outline: none;
-       border: none;
-       background-color: var(--sidebar_color);
-     
+  outline: none;
+  border: none;
+  background-color: var(--sidebar_color);
 }
 
 .add {
-       margin-left: 3rem;
-       cursor: pointer;
+  margin-left: 3rem;
+  cursor: pointer;
 }
 
+.editor__container {
+  background-color: var(--editor);
+}
