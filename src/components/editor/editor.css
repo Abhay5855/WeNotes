@@ -4,11 +4,22 @@
 :root {
        --editor : #1F1F1F;
        --color : #fff;
+
+        --sidebar: #2b2b2b;
+        --sidebar_color: #d3d3d3;
+        --main-color: #fff;
+        --recent: #008837;
+        /* --editor: #202124; */
+        --tags-section: #d3d3d3;
+        --notes: #353535;
+        --hover: #767676;
+      
 }
 
 .editor__container {
 
        height: 100vh;
+       color: var(--color);
 
 }
 
@@ -55,3 +66,13 @@
 }
 
 
+.submit__note {
+
+        background-color: var(--recent);
+        border: none;
+        outline: none;
+        color: var(--color);
+        padding: 0.2rem;
+        cursor: pointer;
+
+}
