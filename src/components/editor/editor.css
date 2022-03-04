@@ -67,4 +67,11 @@
 .submit__note:disabled {
       
        background-color: #aad4bb;
+       cursor: not-allowed;
+}
+
+.editor > input {
+
+     background-color: var(--editor);
+     color: var(--color);
 }
