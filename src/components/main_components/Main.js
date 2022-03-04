@@ -6,8 +6,7 @@ import Tasks from "../tasks/Tasks";
 import "../sidebar/sidebar.css";
 import Tags from "../tags/Tags";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import LandingNavbar from "../landing/LandingNavbar";
-import LandingPage from "../landing/LandingPage";
+
 
 import './main.css'
 
@@ -32,10 +31,15 @@ const Main = () => {
           <Route path="/tags">
             <Tags />
           </Route>
+
+         
         </Switch>
+        
       </Router>
 
       </div>
+
+      <Editor  />
   
     </div>
   );

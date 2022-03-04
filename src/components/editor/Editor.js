@@ -2,10 +2,15 @@
 
 
 import React from 'react'
+import './editor.css'
 
 const Editor = () => {
   return (
-    <div></div>
+    <div className='editor__container'>
+         <div className='editor'>
+           
+         </div>
+    </div>
   )
 }
 
