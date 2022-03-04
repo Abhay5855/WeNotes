@@ -16,8 +16,9 @@
 .sidebar__elements {
   padding: 0.4rem;
   flex: 0.1;
-  height: 100vh;
+  height:auto;
   background-color: var(--notes);
+
 }
 
 .sidebar__items {
