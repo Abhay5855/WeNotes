@@ -1,44 +1,38 @@
-import React, {useCallback, useState} from "react";
+import React, { useCallback, useState } from "react";
 import "./editor.css";
 import ReactQuill from "react-quill";
 import Editor_Format, { modules, formats } from "../../utils/Editor_Format";
-import {debounce} from 'lodash';
-
+import { debounce } from "lodash";
 
 const Editor = () => {
-
-
-
   //state to add text inside of editor
-  const [text , setText] = useState('');
+  const [text, setText] = useState("");
+  
 
-   const deb = useCallback(
-
-    debounce((val) => setText(val) ,1000),
+  //using the useCallback hook to pass the debounce val and time delay of 1sec.
+  const deb = useCallback(
+    debounce((val) => setText(val), 1000),
 
     []
-
-   )
-  
+  );
+   
+  // handle function when text changes
   const handleChange = (val) => {
+    deb(val);
+  };
 
-     
-     const txt =   deb(val);
-     console.log(txt);
-
-           
-
-          
-  }
-
-    
   return (
     <div className="editor__container">
       <div className="editor">
-
-      <div dangerouslySetInnerHTML={{__html: text}} />
+        {/* Using dangerousHtml property to remove the html tags and display plain text */}
+        <h2 dangerouslySetInnerHTML={{ __html: text }} />
         <Editor_Format />
-        <ReactQuill modules={modules} formats={formats} value={text} onChange={handleChange}/>
+        <ReactQuill
+          modules={modules}
+          formats={formats}
+          value={text}
+          onChange={handleChange}
+        />
       </div>
     </div>
   );
