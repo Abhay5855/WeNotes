@@ -7,6 +7,8 @@ import { debounce } from "lodash";
 const Editor = () => {
   //state to add text inside of editor
   const [text, setText] = useState("");
+  const [id , setId] = useState('');
+  const [title , setTitle] = useState('');
   
 
   //using the useCallback hook to pass the debounce val and time delay of 1sec.
