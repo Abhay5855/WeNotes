@@ -1,32 +1,20 @@
 import React, { useState } from "react";
 import "./notes.css";
 
-const Notes = ({ notes, filter, setFilter }) => {
+const Notes = ({ notes}) => {
   const [search, setSearch] = useState("");
 
  
-  // const displayNotes = filter.map((note, idx) => {
-  //   return (
-  //     <div className="notes">
-  //       <div key={idx} className="notes__container">
-  //         <p className="note__title">{note.data.title}</p>
-
-  //         <span className="note__date">
-  //           {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
-  //         </span>
-  //       </div>
-  //     </div>
-  //   );
-  // });
+  
 
   const displayNotes = notes.filter((item) => {
-
+    // search through the notes and use the filter method
     let searchStr = search.toLowerCase();
       let nameMatches = item.data.title.toLowerCase().includes(searchStr);
-
+      // return the matched Query
       return nameMatches;
 
-         
+  // then mapping the resullt with the search value
   }).map((note, idx) => {
     return (
       <div className="notes">
@@ -34,7 +22,7 @@ const Notes = ({ notes, filter, setFilter }) => {
           <p className="note__title">{note.data.title}</p>
 
           <span className="note__date">
-            {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
+            {new Date(note.data.timestamp.toDate()).toDateString()}
           </span>
         </div>
       </div>
