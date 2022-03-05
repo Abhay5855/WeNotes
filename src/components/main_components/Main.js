@@ -14,6 +14,14 @@ import "./main.css";
 const Main = () => {
   const [notes, setNotes] = useState([]);
 
+  const [text , setText] = useState("");
+
+  const [title , setTitle] = useState("");
+
+  const [isUpdate , setIsUpdate] = useState(false);
+
+  const [id , setId] = useState(null);
+
 
 
 
@@ -45,7 +53,7 @@ const Main = () => {
           <Sidebar />
           <Switch>
             <Route path="/notes">
-              <Notes notes={notes} />
+              <Notes notes={notes}  setText={setText}  setTitle={setTitle}  setIsUpdate={setIsUpdate} setId={setId}/>
             </Route>
             <Route path="/tasks">
               <Tasks />
@@ -57,7 +65,7 @@ const Main = () => {
         </Router>
       </div>
 
-      <Editor />
+      <Editor text={text} setText={setText}  title={title} setTitle={setTitle}  isUpdate={isUpdate} id={id}/>
     </div>
   );
 };
