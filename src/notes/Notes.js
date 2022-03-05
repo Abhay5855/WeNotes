@@ -47,7 +47,7 @@ const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
       return (
         <div className="notes">
           <div key={idx} className="notes__container">
-            <p className="note__title">{note.data.title}</p>
+            <div className="note__title">{note.data.title}</div>
 
             <DeleteIcon
               className="delete__icon"
@@ -77,6 +77,8 @@ const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
   return (
     <>
       <div className="notes__header">
+        <div className="xyx">
+          
         <ul>
           <li>
             <h3 className="notes__heading">Notes</h3>
@@ -96,6 +98,7 @@ const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
         </ul>
 
         {notes.length > 0 ? displayNotes : ""}
+        </div>
       </div>
     </>
   );
