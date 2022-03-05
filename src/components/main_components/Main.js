@@ -7,7 +7,7 @@ import "../sidebar/sidebar.css";
 import Tags from "../tags/Tags";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { db } from "../../firebase/firebase";
-import { query, onSnapshot , collection} from "firebase/firestore";
+import { query, onSnapshot , collection, orderBy} from "firebase/firestore";
 
 import "./main.css";
 
@@ -29,7 +29,7 @@ const Main = () => {
   useEffect(() => {
     const GetAllNotes = () => {
       
-      const allNotes = query(collection(db, "note"));
+      const allNotes = query(collection(db, "note"), orderBy('timestamp'))
 
       onSnapshot(allNotes, (QuerySnapshot) => {
        
@@ -54,7 +54,10 @@ const Main = () => {
           <Switch>
             <Route path="/notes">
               <Notes notes={notes}  setText={setText}  setTitle={setTitle}  setIsUpdate={setIsUpdate} setId={setId}/>
+
+              <Editor text={text} setText={setText}  title={title} setTitle={setTitle} setIsUpdate={setIsUpdate}  isUpdate={isUpdate} id={id}/>
             </Route>
+           
             <Route path="/tasks">
               <Tasks />
             </Route>
@@ -65,7 +68,7 @@ const Main = () => {
         </Router>
       </div>
 
-      <Editor text={text} setText={setText}  title={title} setTitle={setTitle} setIsUpdate={setIsUpdate}  isUpdate={isUpdate} id={id}/>
+     
     </div>
   );
 };
