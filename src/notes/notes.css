@@ -9,6 +9,7 @@
   --hover: #5B5B5B;
   --date : #A1A1A1;
   --delete : #E21717;
+  --update : #383CC1;
 }
 
 
@@ -111,5 +112,15 @@
      position: absolute;
      right: 0;
      color: var(--delete);
+     font-size: 0.6rem;
 
+
+}
+
+
+.edit__icon {
+      color: var(--recent);
+      right: 10%;
+      position: absolute;
+      font-size: 0.6rem;
 }
