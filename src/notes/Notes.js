@@ -1,57 +1,43 @@
 import React, { useState } from "react";
 import "./notes.css";
 
-const Notes = ({ notes}) => {
+const Notes = ({ notes , isLoading}) => {
   const [search, setSearch] = useState("");
 
- 
-  
-
-  const displayNotes = notes.filter((item) => {
-    // search through the notes and use the filter method
-    let searchStr = search.toLowerCase();
+  const displayNotes = notes
+    .filter((item) => {
+      // search through the notes and use the filter method
+      let searchStr = search.toLowerCase();
       let nameMatches = item.data.title.toLowerCase().includes(searchStr);
       // return the matched Query
       return nameMatches;
 
-  // then mapping the resullt with the search value
-  }).map((note, idx) => {
-    return (
-      <div className="notes">
-        <div key={idx} className="notes__container">
-          <p className="note__title">{note.data.title}</p>
+      // then mapping the resullt with the search value
+    })
+    .map((note, idx) => {
+      return (
+        <div className="notes">
+          <div key={idx} className="notes__container">
+            <p className="note__title">{note.data.title}</p>
 
-          <span className="note__date">
-            {new Date(note.data.timestamp.toDate()).toDateString()}
-          </span>
+            <span className="note__date">
+              {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
+            </span>
+          </div>
         </div>
-      </div>
-    );
-  });
-
+      );
+    });
 
   const handleSearch = (e) => {
-    // let value = e.target.value.toLowerCase();
-
-    // setSearch(value);
-
-    // let res = [];
-
-    // res = notes.filter((data) => {
-    //   let searchStr = search.toLowerCase();
-    //   let nameMatches = data.data.title.toLowerCase().includes(searchStr);
-
-    //   return nameMatches;
-    // });
-
-    // setFilter(res);
-
     setSearch(e.target.value);
   };
 
   return (
     <>
+
+      {isLoading && <p>{isLoading}</p>}
       <div className="notes__header">
+
         <ul>
           <li>
             <h3 className="notes__heading">Notes</h3>

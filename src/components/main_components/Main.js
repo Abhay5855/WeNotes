@@ -16,11 +16,11 @@ const Main = () => {
 
 
 
-  const [isLoading , setIsLoading] = useState(null);
 
   // get all the notes added iside the effect
   useEffect(() => {
     const GetAllNotes = () => {
+      
       const allNotes = query(collection(db, "note"));
 
       onSnapshot(allNotes, (QuerySnapshot) => {
