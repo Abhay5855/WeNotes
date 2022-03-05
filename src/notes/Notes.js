@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./notes.css";
 
-const Notes = ({ notes , isLoading}) => {
+const Notes = ({ notes }) => {
+  //state for search Query
   const [search, setSearch] = useState("");
 
   const displayNotes = notes
@@ -11,9 +12,9 @@ const Notes = ({ notes , isLoading}) => {
       let nameMatches = item.data.title.toLowerCase().includes(searchStr);
       // return the matched Query
       return nameMatches;
-
-      // then mapping the resullt with the search value
     })
+
+    // then mapping the resullt with the search value
     .map((note, idx) => {
       return (
         <div className="notes">
@@ -23,6 +24,8 @@ const Notes = ({ notes , isLoading}) => {
             <span className="note__date">
               {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
             </span>
+              {/* Using dangerousHtml property to remove the html tags and display plain text */}
+                {/* <span dangerouslySetInnerHTML={{ __html: note.data.text }} /> */}
           </div>
         </div>
       );
@@ -34,10 +37,7 @@ const Notes = ({ notes , isLoading}) => {
 
   return (
     <>
-
-      {isLoading && <p>{isLoading}</p>}
       <div className="notes__header">
-
         <ul>
           <li>
             <h3 className="notes__heading">Notes</h3>
@@ -56,11 +56,8 @@ const Notes = ({ notes , isLoading}) => {
           </li>
         </ul>
 
-        {/* <div></div> */}
         {notes.length > 0 ? displayNotes : ""}
       </div>
-
-      {/* Notes */}
     </>
   );
 };
