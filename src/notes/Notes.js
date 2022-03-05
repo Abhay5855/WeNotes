@@ -7,6 +7,15 @@ const Notes = ({ notes }) => {
   //state for search Query
   const [search, setSearch] = useState("");
 
+  
+  console.log(notes);
+
+  const handleDelete = () => {
+
+     
+  }
+
+  // A display function to shwo the notes
   const displayNotes = notes
     .filter((item) => {
       // search through the notes and use the filter method
@@ -17,17 +26,17 @@ const Notes = ({ notes }) => {
     })
 
     // then mapping the resullt with the search value
-    .map((note, idx) => {
+    .map((note) => {
       return (
         <div className="notes">
-          <div key={idx} className="notes__container">
+          <div key={note.id} className="notes__container">
             <p className="note__title">{note.data.title}
 
            
             
             </p>
-
-            <DeleteIcon className="delete__icon"/>
+             
+            <DeleteIcon className="delete__icon" onClick={() => handleDelete()}/>
             <EditIcon className="edit__icon" />
             
 
