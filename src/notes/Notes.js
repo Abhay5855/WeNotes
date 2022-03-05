@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import "./notes.css";
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
+import { deleteDoc , doc} from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
 const Notes = ({ notes }) => {
   //state for search Query
   const [search, setSearch] = useState("");
 
+  const handleDelete = async (id) => {
   
-  console.log(notes);
+    const movieDocRef = doc(db, "note", id);
+    try {
+      await deleteDoc(movieDocRef);
+    } catch (err) {
+      alert(err);
+    }
 
-  const handleDelete = () => {
-
-     
-  }
+    console.log(id);
+  };
 
   // A display function to shwo the notes
   const displayNotes = notes
@@ -26,26 +32,23 @@ const Notes = ({ notes }) => {
     })
 
     // then mapping the resullt with the search value
-    .map((note) => {
+    .map((note, idx) => {
       return (
         <div className="notes">
-          <div key={note.id} className="notes__container">
-            <p className="note__title">{note.data.title}
+          <div key={idx} className="notes__container">
+            <p className="note__title">{note.data.title}</p>
 
-           
-            
-            </p>
-             
-            <DeleteIcon className="delete__icon" onClick={() => handleDelete()}/>
+            <DeleteIcon
+              className="delete__icon"
+              onClick={() => handleDelete(note.id)}
+            />
             <EditIcon className="edit__icon" />
-            
 
             <span className="note__date">
               {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
-
             </span>
-              {/* Using dangerousHtml property to remove the html tags and display plain text */}
-                {/* <span dangerouslySetInnerHTML={{ __html: note.data.text }} /> */}
+            {/* Using dangerousHtml property to remove the html tags and display plain text */}
+            {/* <span dangerouslySetInnerHTML={{ __html: note.data.text }} /> */}
           </div>
         </div>
       );
