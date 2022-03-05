@@ -65,7 +65,7 @@ const Main = () => {
         </Router>
       </div>
 
-      <Editor text={text} setText={setText}  title={title} setTitle={setTitle}  isUpdate={isUpdate} id={id}/>
+      <Editor text={text} setText={setText}  title={title} setTitle={setTitle} setIsUpdate={setIsUpdate}  isUpdate={isUpdate} id={id}/>
     </div>
   );
 };
