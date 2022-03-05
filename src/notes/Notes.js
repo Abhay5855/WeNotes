@@ -64,7 +64,7 @@ const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
               {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
             </span>
             {/* Using dangerousHtml property to remove the html tags and display plain text */}
-            <span dangerouslySetInnerHTML={{ __html: note.data.text }} />
+            {/* <span dangerouslySetInnerHTML={{ __html: note.data.text }} /> */}
           </div>
         </div>
       );
