@@ -14,7 +14,7 @@
 
 
 .notes__header {
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 .notes__header ul {
