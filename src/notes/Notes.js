@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./notes.css";
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 
 const Notes = ({ notes }) => {
   //state for search Query
@@ -19,10 +21,19 @@ const Notes = ({ notes }) => {
       return (
         <div className="notes">
           <div key={idx} className="notes__container">
-            <p className="note__title">{note.data.title}</p>
+            <p className="note__title">{note.data.title}
+
+           
+            
+            </p>
+
+            <DeleteIcon className="delete__icon"/>
+            <EditIcon className="edit__icon" />
+            
 
             <span className="note__date">
               {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
+
             </span>
               {/* Using dangerousHtml property to remove the html tags and display plain text */}
                 {/* <span dangerouslySetInnerHTML={{ __html: note.data.text }} /> */}
