@@ -1,10 +1,11 @@
 
 
 import React from 'react'
+import './tasks.css'
 
 const Tasks = () => {
   return (
-    <div>Tasks</div>
+    <div className='task'>Tasks</div>
   )
 }
 

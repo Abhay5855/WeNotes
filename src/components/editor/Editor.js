@@ -4,9 +4,8 @@ import ReactQuill from "react-quill";
 import Editor_Format, { modules, formats } from "../../utils/Editor_Format";
 import { debounce } from "lodash";
 import { db } from "../../firebase/firebase";
-import { query, onSnapshot } from "firebase/firestore";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 
 const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) => {
   //state to add text inside of editor
