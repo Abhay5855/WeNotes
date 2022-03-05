@@ -27,6 +27,7 @@ const Main = () => {
        
         setNotes(
           QuerySnapshot.docs.map((doc) => ({
+            id : doc.id,
             data: doc.data(),
           }))
         );
