@@ -28,8 +28,8 @@ const Editor = () => {
 
   // handle submit button
   const handleAdd = async () => {
-    setAddingNote(true);
-    console.log("added");
+    setAddingNote(!addingNote);
+   
 
     await addDoc(collection(db, "note"), {
       title: title,
@@ -41,12 +41,16 @@ const Editor = () => {
       })
 
       .catch((err) => {
-        console.log(err);
+        console.log(err); 
       });
+
+      // Empty the results
+      setText("");
+      setTitle("");
   };
 
   // Disable condition if text is empty
-  const disabled = !title;
+  const disabled = !title || !text;
 
   return (
     <div className="editor__container">
@@ -57,7 +61,7 @@ const Editor = () => {
         <button
           disabled={disabled}
           className="submit__note"
-          onClick={handleAdd}
+          onClick={() => handleAdd()}
         >
           Submit Note
         </button>

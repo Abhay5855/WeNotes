@@ -10,6 +10,11 @@
   --date : #A1A1A1;
 }
 
+
+.notes__header {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 .notes__header ul {
   padding: 0.7rem;
   display: flex;
@@ -89,3 +94,10 @@
       color: var(--date);
       font-size:0.55rem;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 4px;
+  background-color: var(--recent);
+}
+
