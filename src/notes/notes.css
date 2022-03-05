@@ -16,6 +16,8 @@
 .notes__header {
     overflow-y: scroll;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 .notes__header ul {
   padding: 0.7rem;
@@ -66,6 +68,8 @@
 
 .editor__container {
   background-color: var(--editor);
+  flex: 1.2;
+  
 }
 
 .notes__container {
@@ -122,10 +126,44 @@
 
 }
 
+.xyx {
+    flex: 1.2;
+}
+
 
 .edit__icon {
       color: var(--recent);
       right: 10%;
       position: absolute;
       font-size: 0.6rem;
+}
+
+@media screen and (max-width : 480px){
+
+      
+  .notes__header {
+       width: 100vw;
+  }
+
+  .notes__header ul {
+    padding: 1rem;
+    
+  }
+
+  .search {
+    padding: 0.3rem;
+    margin-left: 5rem;
+  }
+
+  .notes {
+    padding: 1.5rem;
+}
+
+
+.note__title {
+
+
+  font-size: 1.5rem;
+ 
+}   
 }
