@@ -8,7 +8,7 @@ import { query, onSnapshot } from "firebase/firestore";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 
-const Editor = ({ text, setText, isUpdate, id, title, setTitle }) => {
+const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) => {
   //state to add text inside of editor
   // const [text, setText] = useState("");
   // const [id, setId] = useState("");
@@ -65,6 +65,8 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle }) => {
 
     setText("");
     setTitle("");
+    setIsUpdate(false);
+
   };
 
   return (
