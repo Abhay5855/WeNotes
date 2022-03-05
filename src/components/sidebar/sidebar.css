@@ -38,11 +38,33 @@
 
 
 .sidebar__items > div {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin-left: 1rem;
+  font-weight: 600;
 }
 
-.sidebar__items > i {
+.sidebar__items  i {
   font-size: 0.8rem;
+  /* font-weight: 400; */
 }
 
+
+
+@media screen and (max-width: 550px){
+
+  .sidebar__items > div {
+      display: none;
+  }
+
+
+
+   
+}
+
+@media screen and (max-width : 480px){
+
+  .sidebar__container {
+    display:none
+  } 
+  
+}
