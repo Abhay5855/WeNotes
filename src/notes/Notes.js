@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "./notes.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import { deleteDoc , doc} from "firebase/firestore";
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
-const Notes = ({ notes }) => {
+const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
   //state for search Query
   const [search, setSearch] = useState("");
 
+  // Delete note function
   const handleDelete = async (id) => {
-  
     const movieDocRef = doc(db, "note", id);
     try {
       await deleteDoc(movieDocRef);
@@ -19,6 +19,17 @@ const Notes = ({ notes }) => {
     }
 
     console.log(id);
+  };
+
+  const handleUpdate = async (id, title ,text) => {
+
+    setText(text);
+    setIsUpdate(true);
+    setTitle(title);
+    setId(id);
+   
+
+    // console.table(id , text , title);
   };
 
   // A display function to shwo the notes
@@ -42,13 +53,18 @@ const Notes = ({ notes }) => {
               className="delete__icon"
               onClick={() => handleDelete(note.id)}
             />
-            <EditIcon className="edit__icon" />
+            <EditIcon
+              className="edit__icon"
+              onClick={() =>
+                handleUpdate(note.id, note.data.title, note.data.text)
+              }
+            />
 
             <span className="note__date">
               {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
             </span>
             {/* Using dangerousHtml property to remove the html tags and display plain text */}
-            {/* <span dangerouslySetInnerHTML={{ __html: note.data.text }} /> */}
+            <span dangerouslySetInnerHTML={{ __html: note.data.text }} />
           </div>
         </div>
       );
