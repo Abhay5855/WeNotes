@@ -1,34 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "./notes.css";
 
-const Notes = ({ notes }) => {
+const Notes = ({ notes, filter, setFilter }) => {
+  const [search, setSearch] = useState("");
 
-      const [search , setSearch] = useState("");
+ 
+  const displayNotes = filter.map((note, idx) => {
+    return (
+      <div className="notes">
+        <div key={idx} className="notes__container">
+          <p className="note__title">{note.data.title}</p>
 
+          <span className="note__date">
+            {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
+          </span>
+        </div>
+      </div>
+    );
+  });
 
+  const handleSearch = (e) => {
+    let value = e.target.value.toLowerCase();
 
-     const displayNotes = notes.map((note , idx) => {
+    setSearch(value);
 
+    let res = [];
 
-               return (
+    res = notes.filter((data) => {
+      let searchStr = search.toLowerCase();
+      let nameMatches = data.data.title.toLowerCase().includes(searchStr);
 
-                <div className="notes">
+      return nameMatches;
+    });
 
-                
-                
-                <div key={idx} className="notes__container">
+    setFilter(res);
+  };
 
-                  <p className="note__title">{note.data.title}</p>
-
-                  <span className="note__date">{(new Date(note.data.timestamp.toDate())).toDateString()}</span>
-
-                </div>
-
-                </div>
-               )
-     })
-
-     
   return (
     <>
       <div className="notes__header">
@@ -39,16 +46,19 @@ const Notes = ({ notes }) => {
 
           <li>
             <div className="search">
-              <input type="text" placeholder="Search notes" value={search} onChange={(e) => setSearch(e.target.value)}/>
+              <input
+                type="text"
+                placeholder="Search notes"
+                value={search}
+                onChange={(e) => handleSearch(e)}
+              />
               <i class="fas fa-search"></i>
             </div>
           </li>
         </ul>
 
         {/* <div></div> */}
-
-        {displayNotes}
-
+        {notes.length > 0 ? displayNotes : ""}
       </div>
 
       {/* Notes */}
