@@ -8,6 +8,7 @@
   --notes: #353535;
   --hover: #5B5B5B;
   --date : #A1A1A1;
+  --delete : #E21717;
 }
 
 
@@ -74,6 +75,9 @@
   border-left: 2px solid var(--recent);
   cursor: pointer;
   border-radius: 2px;
+  display: flex;
+  align-items: center;
+  position: relative;
   
      
 }
@@ -101,3 +105,11 @@
   background-color: var(--recent);
 }
 
+
+.delete__icon {
+
+     position: absolute;
+     right: 0;
+     color: var(--delete);
+
+}
