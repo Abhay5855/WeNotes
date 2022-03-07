@@ -58,13 +58,21 @@ const Tasks = () => {
               
               <Tasks_Perform todos={todos}/>
                 </div>
-  
+              
   
   
   
           
 
         
+        </div>
+
+        {/* Pomodoro */}
+
+        <div className="pomodoro__container">
+
+            
+
         </div>
     </div>
   );
