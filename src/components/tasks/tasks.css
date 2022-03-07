@@ -1,9 +1,72 @@
 
 
+:root {
+    --section : #4B5563;
+    --input : #374151;
+    --color : #fff;
+    --btn : #A78BFA;
+    --disbale : #C4B5FD;
+    --completed : #6B7280;
 
+}
 .task {
 
-    width: 80vw;
+    width: 90vw;
       
 }
 
+
+.task__container {
+
+       padding: 0.7rem;
+       /* width: 80vw; */
+}
+
+.task__section {
+      
+       background-color: var(--section);
+       border-radius: 4px;
+       padding: 0.5rem;
+
+       
+}
+/* add tasks */
+
+.addtask__form {
+    display: flex;
+    align-items: center;
+}
+
+.addtask__form input{
+
+     border: none;
+     outline: none;
+     padding: 0.3rem;
+     border-radius: 4px;
+     background-color: var(--input);
+     color: var(--color);
+
+    
+
+      
+}
+
+.todo__btn {
+
+      border: none;
+      outline: none;
+      background-color: var(--btn);
+      color: var(--color);
+      border-radius: 3px;
+      padding: 0.2rem;
+      margin-left: 1.2rem;
+      cursor: pointer;
+
+     
+}
+
+/* tasks */
+.tasks__perform {
+        background-color: red;
+        height: 100px;
+}
