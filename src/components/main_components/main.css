@@ -14,12 +14,11 @@
 }
 
 .main__items {
-  /* flex: 0.5; */
+  flex: 1;
   display: flex;
   flex-direction: row;
   background-color: var(--sidebar);
   height: 100vh;
-  width: 100%;
 }
 
 
