@@ -1,7 +1,6 @@
 import React, { useState , useEffect} from "react";
 import "./tasks.css";
 import TasksAdd from "./TasksAdd";
-import Tasks_Completed from "./Tasks_Completed";
 import Tasks_Perform from "./Tasks_Perform";
 import { db } from "../../firebase/firebase";
 import { query, onSnapshot , collection, orderBy} from "firebase/firestore";
@@ -12,6 +11,7 @@ const Tasks = () => {
 
   const [todos , setTodos] = useState([]);
 
+  // state to store completed
 
   // Get All the tasks 
   useEffect(() => {
@@ -33,6 +33,10 @@ const Tasks = () => {
     GetAllTodos();
   }, []);
 
+  // get all completed tasks
+
+ 
+
       
 
 
@@ -47,20 +51,18 @@ const Tasks = () => {
            
 
             {/* Added tasks */}
+
+          
+
             <div className="performance">
               
-            <Tasks_Perform todos={todos}/>
-              </div>
-
-
-
-
-            {/* Completed tasks */}
-            <div className="completed__section">
-
-              <Tasks_Completed />
-              
-              </div>
+              <Tasks_Perform todos={todos}/>
+                </div>
+  
+  
+  
+  
+          
 
         
         </div>
