@@ -7,7 +7,7 @@
     --btn : #A78BFA;
     --disbale : #C4B5FD;
     --completed : #6B7280;
-    --hover : #34D399;
+
 
 }
 .task {
@@ -82,7 +82,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    border: 1.5px solid var(--hover);
+    border: 1.5px solid #34D399;
     padding: 0.1rem;
     margin-bottom: 0.3rem;
     border-radius: 2px;
@@ -104,4 +104,8 @@
 
 .delete__todo > i {
       font-size: 0.8rem;
+}
+
+.tasks__perform::-webkit-scrollbar {
+      display: none;
 }
