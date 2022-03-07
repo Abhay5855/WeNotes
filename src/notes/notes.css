@@ -109,7 +109,7 @@
       font-size:0.55rem;
 }
 
-::-webkit-scrollbar {
+.notes__header::-webkit-scrollbar {
   width: 4px;
   border-radius: 4px;
   background-color: var(--recent);
