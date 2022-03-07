@@ -3,13 +3,15 @@
 
 import React from 'react'
 import'./tasks.css'
+import { db } from '../../firebase/firebase'
+import { deleteDoc, doc} from "firebase/firestore";
 
 const Tasks_Perform = ({todos}) => {
 
 
-  console.log(todos)
+  
 
-
+  // Display all the dos using map method
   const displayTodos = todos.map((todo)=> {
 
 
@@ -18,7 +20,7 @@ const Tasks_Perform = ({todos}) => {
 
         <input type='checkbox' />
         <p>{todo.data.todo}</p>
-        <span className='delete__todo'><i class="fas fa-times"></i></span>
+        <span className='delete__todo' onClick={() => handleRemove(todo.id)}><i class="fas fa-times"></i></span>
         
         
         </div>
@@ -26,13 +28,29 @@ const Tasks_Perform = ({todos}) => {
 
   })
 
+
+  // Delete function to remove todo
+  const handleRemove = async (id) => {
+    const movieDocRef = doc(db, "todos", id);
+    try {
+      await deleteDoc(movieDocRef);
+    } catch (err) {
+      alert(err);
+    }
+
+    console.log(id);
+  };
     
 
   return (
     <div className='tasks__perform'> 
 
            
-        {displayTodos}
+        {
+
+          todos.length > 0  ?  displayTodos : ''
+        
+}
 
 
         
