@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar__container">
       <div className="sidebar__elements">
-        <Link to='/notes' style={{textDecoration : 'none'}}>
+        <Link to="/notes" style={{ textDecoration: "none" }}>
           <div className="sidebar__items">
             <i class="far fa-sticky-note"></i>
 
@@ -14,22 +14,12 @@ const Sidebar = () => {
           </div>
         </Link>
 
-        <Link to='/tags' style={{textDecoration : 'none'}}>
-          <div className="sidebar__items">
-            <i class="fas fa-hashtag"></i>
-            <div>Tags</div>
-          </div>
-        </Link>
-
-        <Link to='/tasks' style={{textDecoration : 'none'}}>
+        <Link to="/tasks" style={{ textDecoration: "none" }}>
           <div className="sidebar__items">
             <i class="fas fa-th-list"></i>
             <div>Tasks</div>
           </div>
         </Link>
-
-
-      
       </div>
     </div>
   );
