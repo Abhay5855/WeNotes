@@ -1,29 +1,24 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./tasks.css";
 import TasksAdd from "./TasksAdd";
 import Tasks_Perform from "./Tasks_Perform";
 import { db } from "../../firebase/firebase";
-import { query, onSnapshot , collection, orderBy} from "firebase/firestore";
-
+import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
 const Tasks = () => {
-
-
-  const [todos , setTodos] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   // state to store completed
 
-  // Get All the tasks 
+  // Get All the tasks
   useEffect(() => {
     const GetAllTodos = () => {
-      
-      const allTodos = query(collection(db, "todos"), orderBy('timestamp'))
+      const allTodos = query(collection(db, "todos"), orderBy("timestamp"));
 
       onSnapshot(allTodos, (QuerySnapshot) => {
-       
         setTodos(
           QuerySnapshot.docs.map((doc) => ({
-            id : doc.id,
+            id: doc.id,
             data: doc.data(),
           }))
         );
@@ -35,44 +30,51 @@ const Tasks = () => {
 
   // get all completed tasks
 
- 
-
-      
-
-
   return (
     <div className="task__container">
       <div className="task__section">
-             
-             <div className="task_add">
-             <TasksAdd />
-
-               </div>
-           
-
-            {/* Added tasks */}
-
-          
-
-            <div className="performance">
-              
-              <Tasks_Perform todos={todos}/>
-                </div>
-              
-  
-  
-  
-          
-
-        
+        <div className="task_add">
+          <TasksAdd />
         </div>
 
-        {/* Pomodoro */}
+        {/* Added tasks */}
 
-        <div className="pomodoro__container">
+        <div className="performance">
+          <Tasks_Perform todos={todos} />
+        </div>
+      </div>
 
+      {/* Pomodoro */}
+
+      <div className="pomodoro__container">
+
+          <div className="pomodoro__btn">
+          <div className="target__logo">
+
+          </div>
+             
+           
+
+          <div className="relax__logo">
+
+          </div>
+          </div>
+
+          {/* Clock */}
+          
+          <div className="clock__container">
+            <div className="clock"></div>
+
+            </div>
             
+            <div className="control__btn">
 
+                  <button className="start__btn">Start</button>
+                  <button className="reset__btn">Reset</button>
+              </div>
+           
+          
+        
         </div>
     </div>
   );
