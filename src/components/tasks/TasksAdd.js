@@ -6,7 +6,7 @@ import './tasks.css'
 const TasksAdd = () => {
   const [todo, setTodo] = useState("");
 
-  const [addList, setAddList] = useState([]);
+    const disable = !todo;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const TasksAdd = () => {
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
         />
-        <button type="submit" className="todo__btn">Add</button>
+        <button disabled={disable} type="submit" className="todo__btn">Add</button>
       </form>
     </div>
   );
