@@ -8,10 +8,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { doc, updateDoc } from "firebase/firestore";
 
 const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) => {
-  //state to add text inside of editor
-  // const [text, setText] = useState("");
-  // const [id, setId] = useState("");
-  // const [title, setTitle] = useState("");
+ 
   const [addingNote, setAddingNote] = useState(false);
 
   //using the useCallback hook to pass the debounce val and time delay of 1sec.
