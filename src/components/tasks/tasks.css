@@ -109,3 +109,11 @@
 .tasks__perform::-webkit-scrollbar {
       display: none;
 }
+
+.todo__name {
+     color: var(--color);
+}
+
+.strikethrough:checked + p{
+    text-decoration:line-through
+  }
