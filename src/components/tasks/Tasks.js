@@ -1,7 +1,9 @@
 import React from "react";
 import "./tasks.css";
 import TasksAdd from "./TasksAdd";
-import Tasksperform from "./Tasksperform";
+import Tasks_Completed from "./Tasks_Completed";
+import Tasks_Perform from "./Tasks_Perform";
+
 
 const Tasks = () => {
   return (
@@ -17,13 +19,18 @@ const Tasks = () => {
             {/* Added tasks */}
             <div className="performance">
               
-            <Tasksperform />
+            <Tasks_Perform/>
               </div>
 
 
 
 
             {/* Completed tasks */}
+            <div className="completed__section">
+
+              <Tasks_Completed />
+              
+              </div>
 
         
         </div>
