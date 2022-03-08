@@ -8,7 +8,6 @@ import { deleteDoc, doc} from "firebase/firestore";
 
 const Tasks_Perform = ({todos}) => {
 
-  const [isChecked, setIsChecked] = useState(false);
 
    
   
