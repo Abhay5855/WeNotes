@@ -63,7 +63,10 @@ const Tasks = () => {
           {/* Clock */}
           
           <div className="clock__container">
-            <div className="clock"></div>
+            <div className="clock">
+                  
+                  <p className="time">25:00</p>
+              </div>
 
             </div>
             
