@@ -47,7 +47,7 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
   };
 
   // Disable condition if text is empty
-  const disabled =  !title;
+  // const disabled =  !title;
 
   const handleSubmit = async () => {
     const updateRef = doc(db, "note", id);
@@ -82,7 +82,7 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
           </button>
         ) : (
           <button
-            disabled={disabled}
+            // disabled={disabled}
             className="submit__note"
             onClick={() => handleAdd()}
           >
