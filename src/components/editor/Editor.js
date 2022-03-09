@@ -14,9 +14,9 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
   //using the useCallback hook to pass the debounce val and time delay of 1sec.
   const deb = useCallback(
 
-    () => debounce((val) => setText(val), 1000),
+     debounce((val) => setText(val), 1000),
 
-    [setText]
+    []
   );
 
   // handle function when text changes
@@ -47,7 +47,7 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
   };
 
   // Disable condition if text is empty
-  const disabled = !text || !title;
+  const disabled =  !title;
 
   const handleSubmit = async () => {
     const updateRef = doc(db, "note", id);
