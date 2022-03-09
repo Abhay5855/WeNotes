@@ -14,12 +14,12 @@ const Sidebar = () => {
           </div>
         </Link>
 
-        <Link to="/tasks" style={{ textDecoration: "none" }}>
+        {/* <Link to="/tasks" style={{ textDecoration: "none" }}>
           <div className="sidebar__items">
             <i class="fas fa-th-list"></i>
             <div>Tasks</div>
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

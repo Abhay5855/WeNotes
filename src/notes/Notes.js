@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./notes.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import { deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
-const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
+const Notes = ({ notes, setText, setIsUpdate, setId, setTitle }) => {
   //state for search Query
   const [search, setSearch] = useState("");
 
@@ -21,13 +21,11 @@ const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
     console.log(id);
   };
 
-  const handleUpdate = async (id, title ,text) => {
-
+  const handleUpdate = async (id, title, text) => {
     setText(text);
     setIsUpdate(true);
     setTitle(title);
     setId(id);
-   
 
     // console.table(id , text , title);
   };
@@ -47,24 +45,25 @@ const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
       return (
         <div className="notes">
           <div key={idx} className="notes__container">
-            <div className="note__title">{note.data.title}</div>
+            <div className="display__title">
+              <div className="note__title">{note.data.title}</div>
 
-            <DeleteIcon
-              className="delete__icon"
-              onClick={() => handleDelete(note.id)}
-            />
-            <EditIcon
-              className="edit__icon"
-              onClick={() =>
-                handleUpdate(note.id, note.data.title, note.data.text)
-              }
-            />
-
-            <span className="note__date">
-              {/* {new Date(note.data.timestamp.toDate()).toDateString()} */}
-            </span>
+              <DeleteIcon
+                className="delete__icon"
+                onClick={() => handleDelete(note.id)}
+              />
+              <EditIcon
+                className="edit__icon"
+                onClick={() =>
+                  handleUpdate(note.id, note.data.title, note.data.text)
+                }
+              />
+            </div>
+            <div className="notes__content">
+            <p dangerouslySetInnerHTML={{ __html: note.data.text }} />
+              </div>
             {/* Using dangerousHtml property to remove the html tags and display plain text */}
-            {/* <span dangerouslySetInnerHTML={{ __html: note.data.text }} /> */}
+          
           </div>
         </div>
       );
@@ -78,26 +77,25 @@ const Notes = ({ notes, setText, setIsUpdate , setId, setTitle}) => {
     <>
       <div className="notes__header">
         <div className="xyx">
-          
-        <ul>
-          <li>
-            <h3 className="notes__heading">Notes</h3>
-          </li>
+          <ul>
+            <li>
+              <h3 className="notes__heading">Notes</h3>
+            </li>
 
-          <li>
-            <div className="search">
-              <input
-                type="text"
-                placeholder="Search notes"
-                value={search}
-                onChange={(e) => handleSearch(e)}
-              />
-              <i class="fas fa-search"></i>
-            </div>
-          </li>
-        </ul>
+            <li>
+              <div className="search">
+                <input
+                  type="text"
+                  placeholder="Search notes"
+                  value={search}
+                  onChange={(e) => handleSearch(e)}
+                />
+                <i class="fas fa-search"></i>
+              </div>
+            </li>
+          </ul>
 
-        {notes.length > 0 ? displayNotes : ""}
+          {notes.length > 0 ? displayNotes : ""}
         </div>
       </div>
     </>

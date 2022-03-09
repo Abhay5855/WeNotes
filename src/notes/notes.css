@@ -68,7 +68,9 @@
 
 .editor__container {
   background-color: var(--editor);
-  flex: 1.2;
+  /* flex: 1.2; */
+  /* flex-wrap: wrap; */
+  width:42vw;
   
 }
 
@@ -81,10 +83,45 @@
   cursor: pointer;
   border-radius: 2px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   position: relative;
   
      
+}
+
+.notes__content {
+     display: flex;
+     flex-direction: column;
+     margin-left: 0.2rem;
+     justify-content: center;
+     font-size: 0.85rem;
+     font-weight: 600;
+     word-wrap: break-word;
+     width: 230px;
+     border-radius: 3px;
+     background-color: var(--editor);
+     color: var(--main-color);
+     margin-top: 1rem;
+     padding: 0.4rem;
+}
+.notes__content p {
+
+  word-wrap: break-word;
+
+}
+
+li::marker {
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+
+ 
+}
+
+.display__title {
+    display: flex;
+    align-items: center;
+    
 }
 
 
@@ -98,6 +135,9 @@
      white-space: nowrap;
      display: block;
      min-width: 0px;
+     margin-left: 0.5rem;
+    
+     
 }    
 
 .notes {
@@ -167,3 +207,4 @@
  
 }   
 }
+
