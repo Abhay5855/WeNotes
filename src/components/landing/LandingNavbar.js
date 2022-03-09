@@ -1,5 +1,6 @@
 import React from "react";
 import "./landingpage.css";
+import {Link} from 'react-router-dom'
 
 const LandingNavbar = () => {
   return (
@@ -13,10 +14,12 @@ const LandingNavbar = () => {
            <h2 className="heading">WeNotes</h2>
        </li>
         
-
-        <li className="auth">
+         <Link to='/notes'>
+         <li className="auth">
           <p className="login">Login</p>
         </li>
+         </Link>
+      
 
         <li>
           <button className="landing__navbar__btn">Sign up</button>
