@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../sidebar/Sidebar";
+// import Sidebar from "../sidebar/Sidebar";
 import Editor from "../editor/Editor";
 import Notes from "../../notes/Notes";
-import "../sidebar/sidebar.css";
+
 import Tags from "../tags/Tags";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { db } from "../../firebase/firebase";
@@ -51,7 +51,7 @@ const Main = () => {
     <div className="main__container">
       <div className="main__items">
         <Router>
-          <Sidebar />
+         
           <Switch>
             <Route path="/notes">
               <Notes notes={notes}  setText={setText}  setTitle={setTitle}  setIsUpdate={setIsUpdate} setId={setId}/>

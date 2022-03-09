@@ -20,7 +20,7 @@
     flex-direction: column;
 }
 .notes__header ul {
-  padding: 0.7rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
 }
@@ -70,7 +70,7 @@
   background-color: var(--editor);
   /* flex: 1.2; */
   /* flex-wrap: wrap; */
-  width:42vw;
+  width:60vw;
   
 }
 
@@ -144,10 +144,6 @@ li::marker {
      padding: 0.5rem;
 }
 
-.note__date {
-      color: var(--date);
-      font-size:0.55rem;
-}
 
 .notes__header::-webkit-scrollbar {
   width: 4px;
@@ -167,7 +163,7 @@ li::marker {
 }
 
 .xyx {
-    flex: 1.2;
+    width: 40vw;
 }
 
 
@@ -208,3 +204,31 @@ li::marker {
 }   
 }
 
+@media screen and (min-width : 1440px){
+
+  
+.note__title {
+
+
+  font-size: 1.9rem;
+ 
+} 
+
+.search {
+  padding: 0.7rem;
+  margin-left: 6rem;
+}
+
+.notes {
+  padding: 0.8rem;
+}
+
+.note__title {
+
+  font-size: 1rem;
+  margin-left: 0.5rem;
+ 
+  
+}    
+  
+}

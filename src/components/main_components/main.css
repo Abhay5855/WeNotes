@@ -12,6 +12,8 @@
   display: flex;
   flex-direction: row;
   width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .main__items {
