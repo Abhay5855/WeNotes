@@ -15,7 +15,7 @@
 }
 
 .main__items {
-  /* flex: 1; */
+  flex: 1;
   display: flex;
   flex-direction: row;
   background-color: var(--sidebar);
