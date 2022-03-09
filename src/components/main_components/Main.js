@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../sidebar/Sidebar";
 import Editor from "../editor/Editor";
 import Notes from "../../notes/Notes";
-import Tasks from "../tasks/Tasks";
 import "../sidebar/sidebar.css";
 import Tags from "../tags/Tags";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { db } from "../../firebase/firebase";
+
 import { query, onSnapshot , collection, orderBy} from "firebase/firestore";
+
 
 import "./main.css";
 
@@ -58,9 +59,7 @@ const Main = () => {
               <Editor text={text} setText={setText}  title={title} setTitle={setTitle} setIsUpdate={setIsUpdate}  isUpdate={isUpdate} id={id}/>
             </Route>
            
-            <Route path="/tasks">
-              <Tasks />
-            </Route>
+           
             <Route path="/tags">
               <Tags />
             </Route>
