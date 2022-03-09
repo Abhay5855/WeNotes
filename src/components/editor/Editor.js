@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import "./editor.css";
 import ReactQuill from "react-quill";
-import Editor_Format, { modules, formats } from "../../utils/Editor_Format";
+import EditorFormat, { modules, formats } from "../../utils/EditorFormat";
 import { debounce } from "lodash";
 import { db } from "../../firebase/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
@@ -14,9 +14,9 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
   //using the useCallback hook to pass the debounce val and time delay of 1sec.
   const deb = useCallback(
 
-    debounce((val) => setText(val), 1000),
+    () => debounce((val) => setText(val), 1000),
 
-    []
+    [setText]
   );
 
   // handle function when text changes
@@ -97,7 +97,7 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <Editor_Format />
+        <EditorFormat />
         <ReactQuill
           placeholder="Start Typing.."
           modules={modules}
