@@ -12,17 +12,17 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate,not
   const [addingNote, setAddingNote] = useState(false);
 
    
-  useEffect(() => {
+  // useEffect(() => {
 
-    if(notes.length === 0){
+  //   if(notes.length === 0){
 
-         setText("");
-         setTitle("");
+  //        setText("");
+  //        setTitle("");
          
 
-    }
+  //   }
 
-  },[])
+  // },[])
 
   //using the useCallback hook to pass the debounce val and time delay of 1sec.
   const deb = useCallback(
