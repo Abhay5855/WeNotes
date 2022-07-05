@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import "./editor.css";
 import ReactQuill from "react-quill";
 import EditorFormat, { modules, formats } from "../../utils/EditorFormat";
@@ -7,9 +7,22 @@ import { db } from "../../firebase/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { doc, updateDoc } from "firebase/firestore";
 
-const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) => {
+const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate,notes}) => {
  
   const [addingNote, setAddingNote] = useState(false);
+
+   
+  useEffect(() => {
+
+    if(notes.length === 0){
+
+         setText("");
+         setTitle("");
+         
+
+    }
+
+  },[])
 
   //using the useCallback hook to pass the debounce val and time delay of 1sec.
   const deb = useCallback(
@@ -70,9 +83,9 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
     <div className="editor__container">
       <div className="editor">
         {/* Using dangerousHtml property to remove the html tags and display plain text */}
-        {/* <h2 dangerouslySetInnerHTML={{ __html: text }} /> */}
+      
 
-        {isUpdate ? (
+        {isUpdate  ? (
           <button
             // disabled={disabled}
             className="submit__note"
@@ -81,6 +94,8 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate}) =
             Update Note
           </button>
         ) : (
+
+
           <button
             disabled={disabled}
             className="submit__note"

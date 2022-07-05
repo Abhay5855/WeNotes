@@ -30,7 +30,7 @@ const Notes = ({ notes, setText, setIsUpdate, setId, setTitle }) => {
     // console.table(id , text , title);
   };
 
-  // A display function to shwo the notes
+  // A display function to show the notes
   const displayNotes = notes
     .filter((item) => {
       // search through the notes and use the filter method
@@ -95,7 +95,7 @@ const Notes = ({ notes, setText, setIsUpdate, setId, setTitle }) => {
             </li>
           </ul>
 
-          {notes.length > 0 ? displayNotes : ""}
+          {notes.length > 0 ? displayNotes :  <h2 style={{textAlign : 'center', color : '#fff'}}>Add notes to get started</h2>}
         </div>
       </div>
     </>

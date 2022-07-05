@@ -60,7 +60,8 @@
   border: none;
   outline: none;
   color: var(--color);
-  padding: 0.2rem;
+  padding: 0.2em;
+  height : 3.5em;
   cursor: pointer;
 }
 

@@ -56,7 +56,7 @@ const Main = () => {
             <Route path="/notes">
               <Notes notes={notes}  setText={setText}  setTitle={setTitle}  setIsUpdate={setIsUpdate} setId={setId}/>
 
-              <Editor text={text} setText={setText}  title={title} setTitle={setTitle} setIsUpdate={setIsUpdate}  isUpdate={isUpdate} id={id}/>
+              <Editor notes={notes} text={text} setText={setText}  title={title} setTitle={setTitle} setIsUpdate={setIsUpdate}  isUpdate={isUpdate} id={id}/>
             </Route>
            
            
