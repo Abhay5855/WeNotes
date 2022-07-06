@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState} from "react";
 import "./editor.css";
 import ReactQuill from "react-quill";
 import EditorFormat, { modules, formats } from "../../utils/EditorFormat";
@@ -29,7 +29,7 @@ const Editor = ({ text, setText, isUpdate, id, title, setTitle , setIsUpdate,not
 
      debounce((val) => setText(val), 1000),
 
-    []
+    [text]
   );
 
   // handle function when text changes
