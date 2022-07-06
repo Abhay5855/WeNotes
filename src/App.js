@@ -14,11 +14,11 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/notes">
             <LandingPage />
-          </Route>
+          </Route> */}
 
-          <Route exact path='/notes'>
+          <Route exact path='/'>
             <Main />
           </Route>
         
